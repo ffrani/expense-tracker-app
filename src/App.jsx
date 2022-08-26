@@ -25,6 +25,14 @@ const DUMMY_EXPENSES = [
   },
 ];
 
+let total = 0;
+
+DUMMY_EXPENSES.forEach(item => {
+  total = total + item.amount;
+})
+
+console.log("TOTAL: ", total);
+
 function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
