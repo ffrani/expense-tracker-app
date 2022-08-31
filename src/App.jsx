@@ -27,9 +27,9 @@ const DUMMY_EXPENSES = [
 
 let total = 0;
 
-DUMMY_EXPENSES.forEach(item => {
+DUMMY_EXPENSES.forEach((item) => {
   total = total + item.amount;
-})
+});
 
 console.log("TOTAL: ", total);
 
@@ -46,6 +46,7 @@ function App() {
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
+      Total: {total}
     </div>
   );
 }
