@@ -16,6 +16,15 @@ const Expenses = (props) => {
     return expense.date.getFullYear().toString() === filterYear;
   });
 
+  const filteredTotalExpenses = filteredExpenses.reduce(
+    (amount, currentAmount) => {
+      return (amount += currentAmount.amount);
+    },
+    0
+  );
+
+  console.log(filteredTotalExpenses);
+
   return (
     <li>
       <Card className="expenses">
@@ -25,6 +34,9 @@ const Expenses = (props) => {
         />
         <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
+        <div className="expense-total" style={{ color: "white" }}>
+          Total: ${filteredTotalExpenses.toFixed(2)}
+        </div>
       </Card>
     </li>
   );
