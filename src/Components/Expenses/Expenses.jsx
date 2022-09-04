@@ -34,7 +34,7 @@ const Expenses = (props) => {
         />
         <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
-        <div className="expense-total" style={{ color: "white" }}>
+        <div className="expenses-total">
           Total: ${filteredTotalExpenses.toFixed(2)}
         </div>
       </Card>
